@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+            <title>Cadastro Treino</title>
+        </f:facet>
+        <h:outputStylesheet name="style.css" library="css" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="overrides.css" library="css" />
+    </h:head>
+    <h:body>
+        <h3>Cadastro de Treino</h3>
+        <h:form>
+            <h:panelGrid columns="3" style="height: 100px; width: 500px;">
+                <h:outputText value="Nome do treino*"/>
+                <h:inputText id="nomeInputText" required="true" 
+                             value=""  
+                             requiredMessage="nome não preenchido"/>
+                <h:message for="nomeInputText" styleClass="mensagem_erro" />
+
+                <h:outputText value="Objetivo *"/>
+                <h:inputText id="objetivoInputText" required="true" 
+                             value=""  
+                             requiredMessage="objetivo não preenchido"/>
+                <h:message for="objetivoInputText" styleClass="mensagem_erro" />
+                
+                <h:outputText value="Treino *"/>
+                <h:inputText id="treinoInputText" required="true" 
+                             value=""  
+                             requiredMessage="treino não preenchido"/>
+                <h:message for="treinoInputText" styleClass="mensagem_erro" />
+                  
+                <h:outputText value="Nível *"/>
+                <h:selectOneMenu id="nivelInputText" required="true" value="" requiredMessage="nível não selecionado">
+                    <f:selectItem itemValue="iniciante" itemLabel="Iniciante"/>
+                    <f:selectItem itemValue="Intermediário" itemLabel="Intermediário"/>
+                    <f:selectItem itemValue="Avançado" itemLabel="Avançado"/>
+                </h:selectOneMenu> 
+            </h:panelGrid>
+            
+            <h:panelGrid>
+                <h:commandButton value="Inserir" />
+            </h:panelGrid>
+            <p><h:outputLink value="index.xhtml">Visualizar Treinos</h:outputLink></p>
+        </h:form>
+    </h:body>
+</html>
+
