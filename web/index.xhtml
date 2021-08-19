@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+            <title>Filmes Cadastrados</title>
+        </f:facet>
+        <h:outputStylesheet name="style.css" library="css" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="overrides.css" library="css" />
+    </h:head>
+    <h:body>
+        <h3>Musculação Cadastrada</h3>
+        <h:dataTable value="" var="filme" rowClasses="oddRows, evenRows" headerClass="header"
+                     styleClass="table" cellpadding="5" cellspacing="0">
+            <h:column>
+                <f:facet name="header">Nome</f:facet>
+              
+            </h:column>
+            <h:column>
+                <f:facet name="header">Tipo</f:facet>
+               
+            </h:column>
+             <h:column>
+                <f:facet name="header">Dia da Semana</f:facet>
+                  
+            </h:column>
+             <h:column>
+                <f:facet name="header">Detalhes do exercício</f:facet>
+                 
+            </h:column>
+        </h:dataTable>
+         <h:form>
+            <h:commandButton value="Cadastrar" action="cadastro"/>
+            <h:commandButton value="Pesquisar" action="pesquisa"/>
+        </h:form>
+    </h:body>
+</html>

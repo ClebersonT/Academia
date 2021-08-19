@@ -1,0 +1,27 @@
+.mensagem_erro{
+    color: red;
+}
+
+.mensagem{
+    color: blue;
+}
+
+.header{
+    background-color: steelblue;
+    color: white;
+    text-align: left;
+}
+
+.oddRows{
+    padding-left: 5px;
+    background-color: lightcyan;
+}
+
+.evenRows{
+    padding-left: 5px;
+    background-color: lightskyblue;
+}
+
+.table{
+    width: 750px;
+}
