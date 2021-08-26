@@ -19,28 +19,49 @@
           <h:panelGrid columns="3" style="height: 50px; width: 300px;">
                 <h:outputText value="Selecione um tipo de treino *" />
                 <h:selectOneMenu id="tipoSelectOneMenu" required="true"
-                                 value="teste"
+                                 value="#{AcademiaDBBean.nivelSelecionado}"
                                  requiredMessage="tipo não selecionado" style="width: 100px;">
                      <f:selectItem itemValue="iniciante" itemLabel="Iniciante"/>
                     <f:selectItem itemValue="Intermediário" itemLabel="Intermediário"/>
                     <f:selectItem itemValue="Avançado" itemLabel="Avançado"/>
                 </h:selectOneMenu>
-                 <h:message for="tipoSelectOneMenu" styleClass="mensagem_erro" />
+                <h:message for="tipoSelectOneMenu" styleClass="mensagem_erro" />
+                 
+                <h:outputText value="Selecione um Dia da semana *" />
+                <h:selectOneMenu id="diasSelectOneMenu" required="true"
+                                 value="#{AcademiaDBBean.diaSelecionado}"
+                                 requiredMessage="Dia não selecionado" style="width: 100px;">
+                     <f:selectItem itemValue="Segunda-Feira" itemLabel="Segunda-Feira"/>
+                    <f:selectItem itemValue="Terça-Feira" itemLabel="Terça-Feira"/>
+                    <f:selectItem itemValue="Quarta-Feira" itemLabel="Quarta-Feira"/>
+                    <f:selectItem itemValue="Quinta-Feira" itemLabel="Quinta-Feira"/>
+                    <f:selectItem itemValue="Sexta-Feira" itemLabel="Sexta-Feira"/>
+                </h:selectOneMenu>
+                 <h:message for="diasSelectOneMenu" styleClass="mensagem_erro" />
             </h:panelGrid>
-            <h:commandButton value="Pesquisar" />
+            <h:commandButton value="Pesquisar" action="#{AcademiaDBBean.pesquisarTreino()}"/>
         </h:form>
-        <h:panelGrid rendered="">
+        <h:panelGrid rendered="#{AcademiaDBBean.pesquisar}">
             <h:form>
-                <h:outputFormat value="Tipo de Treino" styleClass="mensagem">
-                    <f:param value="" />
+                <h:outputFormat value="Nivel de Treino {0}" styleClass="mensagem">
+                    <f:param value="#{AcademiaDBBean.nivelSelecionado}" />
+                </h:outputFormat>
+                <br />
+                <h:outputFormat value="Dia do Treino {0}" styleClass="mensagem">
+                    <f:param value="#{AcademiaDBBean.diaSelecionado}" />
                 </h:outputFormat>
             </h:form>
             <ul>
-                <ui:repeat value="" var="info_filme">
-                    <li></li>
+                <ui:repeat value="#{AcademiaDBBean.getInfoMusculacaoFiltros()}" var="info_musculacao">
+                    <li>#{info_musculacao}</li>
                 </ui:repeat>
             </ul>
         </h:panelGrid>
         <p><h:outputLink value="index.xhtml">Visualizar e Cadastrar Treino</h:outputLink></p>
+        
+        
+         <ui:repeat var="erro"  value="#{AcademiaDBBean.mensagensErro}">
+            <li style="color: red;">#{erro}</li>
+        </ui:repeat>
     </h:body>
 </html>

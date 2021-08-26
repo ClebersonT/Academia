@@ -18,41 +18,41 @@
             <h:panelGrid columns="3" style="height: 100px; width: 500px;">
                 <h:outputText value="Nome do treino*"/>
                 <h:inputText id="nomeInputText" required="true" 
-                             value=""  
+                             value="#{AcademiaDBBean.musculacao.nomeTreino}"  
                              requiredMessage="nome não preenchido"/>
                 <h:message for="nomeInputText" styleClass="mensagem_erro" />
 
                 <h:outputText value="Objetivo *"/>
                 <h:inputText id="objetivoInputText" required="true" 
-                             value=""  
+                             value="#{AcademiaDBBean.musculacao.objetivo}"  
                              requiredMessage="objetivo não preenchido"/>
                 <h:message for="objetivoInputText" styleClass="mensagem_erro" />
                 
                 <h:outputText value="Treino *"/>
                 <h:inputText id="treinoInputText" required="true" 
-                             value=""  
+                             value="#{AcademiaDBBean.musculacao.descricaoTreino}"  
                              requiredMessage="treino não preenchido"/>
                 <h:message for="treinoInputText" styleClass="mensagem_erro" />
                   
                 <h:outputText value="Nível *"/>
-                <h:selectOneMenu id="nivelInputText" required="true" value="" requiredMessage="nível não selecionado">
+                <h:selectOneMenu id="nivelInputText" required="true" value="#{AcademiaDBBean.musculacao.tipoTreino}" requiredMessage="nível não selecionado">
                     <f:selectItem itemValue="iniciante" itemLabel="Iniciante"/>
                     <f:selectItem itemValue="Intermediário" itemLabel="Intermediário"/>
                     <f:selectItem itemValue="Avançado" itemLabel="Avançado"/>
                 </h:selectOneMenu> 
-                
+                <br />
                  <h:outputText value="Dias da Semana *"/>
-                <h:selectOneMenu id="diasInputText" required="true" value="" requiredMessage="Dia da semana não selecionado">
+                 <h:selectOneMenu id="diasInputText" required="true" value="#{AcademiaDBBean.musculacao.diasDaSemana}" requiredMessage="Dia da semana não selecionado">
                     <f:selectItem itemValue="Segunda-Feira" itemLabel="Segunda-Feira"/>
                     <f:selectItem itemValue="Terça-Feira" itemLabel="Terça-Feira"/>
-                    <f:selectItem itemValue="Quarta-feira" itemLabel="Quarta-Feira"/>
-                    <f:selectItem itemValue="Quinta-feira" itemLabel="Quinta-Feira"/>
-                    <f:selectItem itemValue="Sexta-feira" itemLabel="Sexta-Feira"/>
+                    <f:selectItem itemValue="Quarta-Feira" itemLabel="Quarta-Feira"/>
+                    <f:selectItem itemValue="Quinta-Feira" itemLabel="Quinta-Feira"/>
+                    <f:selectItem itemValue="Sexta-Feira" itemLabel="Sexta-Feira"/>
                 </h:selectOneMenu> 
             </h:panelGrid>
             
             <h:panelGrid>
-                <h:commandButton value="Inserir" />
+                <h:commandButton value="Inserir" action="#{AcademiaDBBean.cadastrarMusculacao()}"/>
             </h:panelGrid>
             <p><h:outputLink value="index.xhtml">Visualizar Treinos</h:outputLink></p>
         </h:form>

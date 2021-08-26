@@ -29,9 +29,8 @@ public class Musculacao {
         this.diasDaSemana = diasDaSemana;
     }
 
-    @Override
-    public String toString() {
-        return "Musculacao{" + "nomeTreino=" + nomeTreino + ", objetivo=" + objetivo + ", descricaoTreino=" + descricaoTreino + ", tipoTreino=" + tipoTreino + ", diasDaSemana=" + diasDaSemana + '}';
+    public String toString(boolean sem_filtro) {
+        return "Musculacao - " + "nome = " + nomeTreino + " - objetivo = " + objetivo + ", Nível do Treino = " + tipoTreino;
     }
     
     public String getNomeTreino() {
